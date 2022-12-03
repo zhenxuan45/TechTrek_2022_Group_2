@@ -28,6 +28,22 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="nav-bar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+          <span class="nav-bar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            <!-- add href later-->
+            <a class="nav-item nav-link" id="dashboard" href="/">Dashboard</a>
+            <a class="nav-item nav-link" id="transactions" href="/">Transactions</a>
+            <a class="nav-item nav-link" id="profile" href="/">Profile</a>
+            <a class="nav-item nav-link" id="login" href="/">Login</a>
+            <a class="nav-item nav-link" id="signUp" href="/">Sign Up</a>
+        </div>
+    </div>
+
+  </nav>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +55,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+    ></script>
   </body>
 </html>

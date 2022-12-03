@@ -3,10 +3,11 @@ import { useState } from 'react'
 const AddTask = ({onAdd}) => {
 
     // This segment creates the states and the state methods
-    const [text, setText] = useState("")
-    const [day, setDay] = useState("")
-    // Default for reminder is false
-    const [reminder, setReminder] = useState(false)
+    const [accountID, setaccountID] = useState("")
+    const [receiveAcc, setreceiveAcc] = useState("")
+    const [date, setDate] = useState("")
+    const [transAmount, settransAmount] = useState("")
+    const [comment, setComment] = useState("")
 
     // this handles the submit button
     const onSubmit = (e) =>{
@@ -15,48 +16,65 @@ const AddTask = ({onAdd}) => {
         e.preventDefault()
 
         // Checks to see if task is added
-        if(!text) {
+        if(!transAmount) {
 
             // If NO TASK ADDED, generates an alert and returns nothing, leaving the function
-            alert('Please add a task')
+            alert('Please add a transaction amount')
             return
         }
 
         // calls the on Add Prop to pass information back up
-        onAdd({text, day, reminder})
+        onAdd({accountID,receiveAcc,date,transAmount,comment})
 
         // Resets the data fields
-        setText('')
-        setDay('')
-        setReminder(false)
+        setaccountID('')
+        setreceiveAcc('')
+        setDate('')
+        settransAmount('')
+        setComment('')
     }
 
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
-                <label> Task </label>
+                <label> Account ID </label>
                 <input type='text'
-                    placeholder='Add Task'
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    placeholder='Account ID'
+                    value={accountID}
+                    onChange={(e) => setaccountID(e.target.value)}
                 />
             </div>
             <div className='form-control'>
-                <label> Day & Time </label>
-                <input type='text' placeholder='Add Day and Time'
-                value={day}
-                onChange={(e) => setDay(e.target.value)}
+                <label> Receiving Account </label>
+                <input type='text' placeholder='Receiving Account'
+                value={receiveAcc}
+                onChange={(e) => setreceiveAcc(e.target.value)}
                  />
             </div>
-            <div className='form-control form-control-check'>
-                <label>Set Reminder </label>
-                <input type='checkbox' 
-                value={reminder}
-                checked = {reminder}
-                onChange={(e) => setReminder(e.currentTarget.checked)}/>
+            <div className='form-control'>
+                <label> Date </label>
+                <input type='text' placeholder='Schedule Date'
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                 />
+            </div>
+            <div className='form-control'>
+                <label> Transaction Amount </label>
+                <input type='text' placeholder='Transaction Amount'
+                value={transAmount}
+                onChange={(e) => settransAmount(e.target.value)}
+                 />
+            </div>
+            <div className='form-control'>
+                <label> Day & Time </label>
+                <input type='text' placeholder='Comment'
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                 />
             </div>
 
-            <input type="submit" value="Save Task" className='btn btn-block' />
+
+            <input type="submit" value="Schedule Transaction" className='btn btn-block' />
         </form>
     )
 }

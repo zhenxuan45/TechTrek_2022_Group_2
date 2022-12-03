@@ -13,7 +13,9 @@ def create_app():
     db.init_app(app)
     
 
-    from .models import User, BankAccount, ScheduledTransactions
+    from .models import User, BankAccount
+
+    # BankAccount, ScheduledTransactions
     
     # app.register_blueprint(models,url_prefix='/')
 
@@ -22,7 +24,7 @@ def create_app():
     with app.app_context():
         db.create_all()
         print(db)
-        print('Created Datasbase')
+        print('Created Database')
 
     return app 
 

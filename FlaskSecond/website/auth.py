@@ -44,7 +44,7 @@ def sign_up():
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         address = request.form.get("address")
-
+        print(username,email)
         user = User.query.filter_by(username=username).first()
         if user:
             flash('User already exist, Please sign in', category='error')

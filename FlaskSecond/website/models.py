@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True)
     address = db.Column(db.String(255))
-    OptIntoPhyStatements = db.Column(db.LargeBinary)
+    # OptIntoPhyStatements = db.Column(db.LargeBinary)
     
     #find all children records: find r/s with BankAccount table
     bankaccount = db.relationship('BankAccount') #mysql: referrence with cap

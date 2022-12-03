@@ -1,6 +1,6 @@
 from flask import Blueprint , render_template, request, flash, jsonify
 from flask_login import  login_required, current_user
-from .models import Note, User
+from .models import User
 from sqlalchemy.inspection import inspect
 from . import db
 import json

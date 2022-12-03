@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<!-- overriding block -->
+{% block title %}Login{% endblock %} {% block content %}
+<!--POST:submitting a form-->
+<form method="POST">
+  <!--aligning text to the center-->
+  <h3 align="center">Login</h3>
+  <!--bootstrap class-->
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <!--id: links input to label field
+        name: attribute name when info is passed from input to backend,
+              hence info can be retrieved by passing the assigned name-->
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+    />
+  </div>
+  <!--break line for button separation-->
+  <br />
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

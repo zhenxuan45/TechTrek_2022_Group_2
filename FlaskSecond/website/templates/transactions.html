@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Transactions{% endblock %}
 {% block content %}
 <br />
-<h1 align="center">Dashboard</h1>
+<h1 align="center">Transactions</h1>
 <ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
+    {% for transactions in user.transactions %}
         <li class="list-group-item">
             <form method="POST">
-                <input type="hidden" value="{{ note.user_id }}" name="delete" id="delete"/>
-                <input type="hidden" value="{{ note.id }}" name="todelete" id="todelete"/>
-                {{ note.data }}
+                <input type="hidden" value="{{ transactions.user_id }}" name="delete" id="delete"/>
+                <input type="hidden" value="{{ transactions.id }}" name="todelete" id="todelete"/>
+                {{ note.contents }}
                 <button type="submit" class="close">
                     <span aria-hidden="true">&times;</span>
                 </button>

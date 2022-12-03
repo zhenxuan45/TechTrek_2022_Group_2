@@ -11,35 +11,28 @@ views=Blueprint("views",__name__)
 @views.route('/',methods=['POST','GET'])
 @login_required
 def home():
-    if request.method == 'POST': 
-        data=request.form.get('note')
-        if len(data)<1: 
-            flash("TOO SHORT", category='error')
-        else:
-            new_note = Note(data=data, user_id=current_user.id)
-            db.session.add(new_note)
-            db.session.commit()
-            flash("NOTE ADDED", category='success')
-            notes=Note.query.all()
-            print(current_user.notes)
-            for note in notes:
-                print(note.id)
-                print(note.data)
-            
-            # print(Note.query.filter_by(data='mark'))
-    return render_template('home.html',user=current_user)
+    if request.method == "POST":
+        note = request.form.get("note")
+        delete = request.form.get("delete")
+        if note != None:
+            if len(note) < 1:
+                flash("Nothing written...", category="error")
+            else:
+                new_note = Note(data=note, user_id=current_user.id)
+                db.session.add(new_note)
+                db.session.commit()
+                flash("Note added!", category="success")
+        elif delete != None:
+            delete = int(delete)
+            if delete == current_user.id:
+                noteID = request.form.get("todelete")
+                noteID = int(noteID)
+                noted = Note.query.get(noteID)
+                if noted:    
+                    db.session.delete(noted)
+                    db.session.commit()
+                    flash("Note deleted", category="success")
 
-    
-@views.route('/delete-note', methods=['POST'])
-def delete_note():
-    note = json.loads(request.data) 
-    noteId  = note['noteId']
-    note = Note.query.get(noteId)
-    if note:
-        if note.user_id == current_user.id:
-            db.session.delete(note)
-            db.session.commit() 
-            flash("DELETED", category='success')
-            return jsonify({})
-    return jsonify({})
+    return render_template("home.html", user=current_user)
+
     

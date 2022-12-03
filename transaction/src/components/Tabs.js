@@ -62,10 +62,10 @@ export default function BasicTabs() {
         <BankAccountType/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Bank Balance
+        <BankBalance/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Transactions
+        <ScheduledTransactions/>
       </TabPanel>
     </Box>
   );

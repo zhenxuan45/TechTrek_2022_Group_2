@@ -10,10 +10,19 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.nav {
+.navbar {
+  text-align: center;
+  margin: auto;
   float: center;
   display: block;
-  padding: 8px;
+  padding: 10px;
+  background-color:darkcyan;
+}
+
+.navbar a {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
 }
 
 .container {

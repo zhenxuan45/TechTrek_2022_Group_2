@@ -29,9 +29,10 @@ function App() {
 
   // Fetch Tasks
   const fetchTasks = async () => {
-
+//http://127.0.0.1:5000/login
     //axios is used here to avoid double promise
-    const res = await axios.get(`http://localhost:5000/tasks`)
+    const res = await axios.get(`http://localhost:3000/tasks`)
+    console.log(res)
 
     return res.data
   }

@@ -49,14 +49,7 @@ def create_app():
     return app
 
 def create_database(app):
-    #check if database is created. If not, create database
-    #no checks needed for this as SQLAlchemy will already not overwrite an existing file
-    #the only time the database wouldn't be created is if it raised an error.
-    with app.app_context():
-        db.create_all()
-    # FLASK-SQL3 not accepting app
-    #('foldername/'+db_name)
-    # if not path.exists('website/' + DB_NAME):
-    #     #creating database for app
-    #     db.create_all(app=app)
-    #     print('Created Database!')
+    if not path.exists('./' + DB_NAME):
+        #creating database for app
+        db.create_all(app=app)
+        print('Created Database!')

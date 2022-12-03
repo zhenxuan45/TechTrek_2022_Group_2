@@ -5,11 +5,11 @@ const Task = ({ task, onDelete, onToggle }) => {
     return (
         <div
             // IF task.reminder is true, output reminder, else nothing
-            className={`task ${task.reminder ? 'reminder' : ''}`}
-            onDoubleClick={() => onToggle(task.id)}
+            // className={`task ${task.reminder ? 'reminder' : ''}`}
+            // onDoubleClick={() => onToggle(task.id)}
         >
             <h3>
-                {task.text} <FaTimes
+                {task.date} <FaTimes
                     style={{ color: 'red', cursor: 'pointer' }}
 
                     // using this empty function allows us to send the task.id back
@@ -17,7 +17,16 @@ const Task = ({ task, onDelete, onToggle }) => {
                 />
             </h3>
             <p>
-                {task.day}
+                {task.accountID}
+            </p>
+            <p>
+                {task.receiveAcc}
+            </p>
+            <p>
+                {task.transAmount}
+            </p>
+            <p>
+                {task.comment}
             </p>
         </div>
     )

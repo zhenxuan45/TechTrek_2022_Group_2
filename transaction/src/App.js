@@ -118,7 +118,7 @@ function App() {
     <div className="container">
       {/*  */}
       <Header
-        title='Task Tracker'
+        title='Transactions'
         onAdd={() => setShowAddTask(!showAddTask)}
         showAdd={showAddTask}
       />
@@ -131,7 +131,7 @@ function App() {
         // IF TRUE, RUN THIS
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> :
         // RUN THIS
-        "No Tasks to Show"
+        "No Transactions to Show"
       }
     </div>
   );

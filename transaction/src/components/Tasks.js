@@ -33,7 +33,7 @@ const Tasks = ({tasks, onDelete, onToggle}) => {
                     key={task.id} 
                     task = {task} 
                     onDelete = {onDelete}
-                    onToggle = {onToggle}
+                    // onToggle = {onToggle}
                 />))
             }
         </>

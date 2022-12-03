@@ -1,8 +1,9 @@
 import React from 'react'
+import axios from 'axios'
 
 const ScheduledTransactions = () => {
   return (
-    <h1>1ScheduledTransactions</h1>
+    <h1>Scheduled Transactions</h1>
   )
 }
 

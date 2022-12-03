@@ -1,8 +1,9 @@
 import React from 'react'
+import axios from 'axios'
 
 const BankBalance = () => {
   return (
-    <h1>BankBalance</h1>
+    <h1>Bank Balance</h1>
   )
 }
 

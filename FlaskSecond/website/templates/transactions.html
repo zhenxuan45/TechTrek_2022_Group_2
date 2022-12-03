@@ -4,12 +4,12 @@
 <br />
 <h1 align="center">Transactions</h1>
 <ul class="list-group list-group-flush" id="notes">
-    {% for transactions in user.transactions %}
+    {% for transaction in user.transactions %}
         <li class="list-group-item">
             <form method="POST">
-                <input type="hidden" value="{{ transactions.user_id }}" name="delete" id="delete"/>
-                <input type="hidden" value="{{ transactions.id }}" name="todelete" id="todelete"/>
-                {{ note.contents }}
+                <input type="hidden" value="{{ transaction.user_id }}" name="delete" id="delete"/>
+                <input type="hidden" value="{{ transaction.id }}" name="todelete" id="todelete"/>
+                {{ transaction.data }}
                 <button type="submit" class="close">
                     <span aria-hidden="true">&times;</span>
                 </button>

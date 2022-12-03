@@ -43,8 +43,12 @@ def sign_up():
     if request.method=="POST": 
         email = request.form.get('email') 
         first_name=request.form.get('firstName')
+        last_name=request.form.get('lastName')
+        username = request.form.get('username')
+        address = request.form.get('address')
         password1=request.form.get('password1')
         password2=request.form.get('password2')
+        optout = request.form.get('optout')
         user=User.query.filter_by(email=email).first()
         
         if user: 
@@ -58,10 +62,11 @@ def sign_up():
             return 'first name too short bro'
         elif password1!=password2: 
             flash('passwords not the same', category='error')
-        elif len(password1)<7: 
+        elif len(password1) < 7: 
             flash('passwords not long enough', category='error')
         else: 
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1,method='sha256'))
+            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1,method='sha256'),
+                address=address, username=username, optphy=(optout=="true"))
             # print(new_user.email)
             db.session.add(new_user)
             db.session.commit()

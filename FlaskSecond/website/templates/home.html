@@ -4,7 +4,7 @@
 <br />
 <h1 align="center">Dashboard</h1>
 <ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
+    {% for note in user.transactions %}
         <li class="list-group-item">
             <form method="POST">
                 <input type="hidden" value="{{ note.user_id }}" name="delete" id="delete"/>

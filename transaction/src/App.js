@@ -4,7 +4,10 @@ import AddTask from './components/AddTask';
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import axios from 'axios';
-import Login from "./components/Login";
+import Login from "./components/Login"; 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 

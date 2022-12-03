@@ -4,9 +4,17 @@ import AddTask from './components/AddTask';
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import axios from 'axios';
-
+import Login from "./components/Login";
 
 function App() {
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  )
 
   // tasks is part of the state, to change any component, need to use the defined function setTasks
   // state is immutate, you can only create and add new

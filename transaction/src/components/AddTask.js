@@ -66,7 +66,7 @@ const AddTask = ({onAdd}) => {
                  />
             </div>
             <div className='form-control'>
-                <label> Day & Time </label>
+                <label> Comment </label>
                 <input type='text' placeholder='Comment'
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}

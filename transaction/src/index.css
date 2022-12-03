@@ -10,6 +10,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.nav {
+  float: center;
+  display: block;
+  padding: 8px;
+}
+
 .container {
   max-width: 500px;
   margin: 30px auto;
